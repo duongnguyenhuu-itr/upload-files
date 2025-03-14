@@ -1,4 +1,4 @@
-import { IMeQuery } from '@/apollo/functions/fetchMe';
+import { IUserQuery } from '@/apollo/functions/function';
 import { initialState, TInitialState } from '@/store/initialState';
 import { StateCreator } from 'zustand';
 
@@ -10,7 +10,7 @@ export interface IMe extends Pick<TInitialState, 'me'> {
 
 const meSlice: StateCreator<IMe> = (set) => ({
   me: { ...initialState.me },
-  setMe: (meData: Partial<IMeQuery>) =>
+  setMe: (meData: Partial<IUserQuery>) =>
     set((state) => ({
       me: {
         ...state.me,

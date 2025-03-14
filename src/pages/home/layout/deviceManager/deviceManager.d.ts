@@ -9,7 +9,7 @@ export type DeviceInfo = {
 
 export type Device = {
   deviceId: string;
-  studyId: string;
+  studyId?: string;
   port: any;
   // bluetoothPath: string;
   // serialPath: string;

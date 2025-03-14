@@ -3,7 +3,6 @@ import authenticationSlice, { IAuthentication } from '@/store/authenticationSlic
 import countrySlice, { ICountry } from '@/store/countrySlice';
 import facilitySlice, { IFacility } from '@/store/facilitySlice';
 import selectedFacilitySlice, { ISelectedFacility } from '@/store/selectedFacilitySlice';
-import saveFilterSlice, { ISaveFilter } from '@/store/saveFilterSlice';
 import leaveSiteSlice, { ILeaveSite } from '@/store/leaveSiteSlice';
 import { initialState } from '@/store/initialState';
 import meSlice, { IMe } from '@/store/meSlice';
@@ -15,8 +14,7 @@ type TStateCreate = IAuthentication &
   ICountry &
   IFacility &
   ISelectedFacility &
-  ILeaveSite &
-  ISaveFilter;
+  ILeaveSite;
 
 type TGlobalAction = {
   setGlobalState: (state: RemoveFunctions<Partial<TStateCreate>>) => void;
@@ -65,7 +63,6 @@ const useBoundStore = create<TStateCreate & TGlobalAction>()(
       ...meSlice(...a),
       ...facilitySlice(...a),
       ...selectedFacilitySlice(...a),
-      ...saveFilterSlice(...a),
       ...leaveSiteSlice(...a),
     }),
     {

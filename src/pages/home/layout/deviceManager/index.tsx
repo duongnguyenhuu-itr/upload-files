@@ -17,6 +17,24 @@ interface IState {
   connectedDevices: Device[];
 }
 
+// Extend the Navigator interface to include the serial property
+declare global {
+  interface Navigator {
+    serial: {
+      getPorts: () => Promise<any[]>;
+      requestPort: (options: { filters: PortInfo[] }) => Promise<any>;
+      addEventListener: (
+        type: string,
+        listener: EventListenerOrEventListenerObject,
+      ) => void;
+      removeEventListener: (
+        type: string,
+        listener: EventListenerOrEventListenerObject,
+      ) => void;
+    };
+  }
+}
+
 const EXAMPLE_DEVICE = {
   port: null,
   deviceId: '123456789',
@@ -31,7 +49,7 @@ const DeviceManager = () => {
   const getConnectedDevice = async (filters: PortInfo[]) => {
     try {
       // Get all serial ports the user has previously granted the website access to.
-      const ports = await (navigator as any).serial.getPorts();
+      const ports = await navigator.serial.getPorts();
 
       // Filter ports based on vendorId and productId
       const filteredPorts = (ports || []).filter((port) => {
@@ -61,7 +79,7 @@ const DeviceManager = () => {
   const handleConnectNewDevice = async () => {
     try {
       if ('serial' in navigator) {
-        const port = await (navigator as any).serial.requestPort({
+        const port = await navigator.serial.requestPort({
           filters: PORT_INFO_OCTO_DEVICES,
         });
         const { usbVendorId, usbProductId } = port.getInfo();
@@ -94,10 +112,10 @@ const DeviceManager = () => {
 
   useEffect(() => {
     if ('serial' in navigator) {
-      (navigator as any).serial.addEventListener('connect', handleConnectListener);
+      navigator.serial.addEventListener('connect', handleConnectListener);
       getConnectedDevice(PORT_INFO_OCTO_DEVICES);
       return () => {
-        (navigator as any).serial.removeEventListener('connect', handleConnectListener);
+        navigator.serial.removeEventListener('connect', handleConnectListener);
       };
     }
   }, []);

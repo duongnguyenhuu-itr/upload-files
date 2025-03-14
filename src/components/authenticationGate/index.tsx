@@ -101,7 +101,7 @@ const AuthenticationGate = ({ children }: { children: JSX.Element }) => {
   useEmitter(
     AppFlowActions.USER_UPDATED,
     (message: IUserUpdated) => {
-      if (message.id !== me._id) {
+      if (message.id !== me.id) {
         return;
       }
       // deactivated user
