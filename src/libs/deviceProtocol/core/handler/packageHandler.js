@@ -11,7 +11,7 @@ import { SmNotificationHandler } from './sm/smNotificationHandler';
 import { SmNWADAPTERHandler } from './sm/smNWADAPTERHandler';
 import { SmREBOOTHandler } from './sm/smREBOOTHandler';
 import { SmStudyHandler } from './sm/smStudyHandler';
-import { SmUECGHandler } from './sm/smUECGhandler';
+import { SmUECGHandler } from './sm/smUECGHandler2';
 import { HandShakeHandler } from './usbSyn/handShakeHandler';
 
 export const PackageHandler = {

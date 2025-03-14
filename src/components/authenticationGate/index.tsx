@@ -24,7 +24,8 @@ interface IState {
 
 const AuthenticationGate = ({ children }: { children: JSX.Element }) => {
   const me = useBoundStore((state) => state.me);
-  const isLogin = useBoundStore((state) => state.authentication.isLogin);
+  // const isLogin = useBoundStore((state) => state.authentication.isLogin);
+  const isLogin = true;
   const setAuthentication = useBoundStore((state) => state.setAuthentication);
   const setLoading = useBoundStore((state) => state.setLoading);
   const setMe = useBoundStore((state) => state.setMe);
@@ -39,7 +40,14 @@ const AuthenticationGate = ({ children }: { children: JSX.Element }) => {
 
   const handleLogin = async () => {
     try {
-      const meData = await fetchMe();
+      // const meData = await fetchMe();
+      const meData = {
+        id: '1',
+        email: '',
+        name: 'John Doe',
+        role: 'admin',
+        avatar: '',
+      };
       setMe(meData);
       setAuthentication(true);
     } catch (error) {
@@ -52,36 +60,36 @@ const AuthenticationGate = ({ children }: { children: JSX.Element }) => {
     }
   };
 
-  const handleCheckLoginStatus = async () => {
-    try {
-      await Auth.currentAuthenticatedUser();
-      appLocalStorage.setLoginBiocare(true);
-      setState({ isLoginBiocare: true });
-    } catch (error) {
-      console.error('Failed to get current authenticated user: ', error);
-      if (window.location.hostname === 'localhost') {
-        Auth.federatedSignIn({ customProvider: 'Clinic' });
-      } else {
-        window.location.href = VITE_BIOCARE_PORTAL_URL;
-      }
-      return;
-    }
-    handleLogin();
-  };
+  // const handleCheckLoginStatus = async () => {
+  //   try {
+  //     await Auth.currentAuthenticatedUser();
+  //     appLocalStorage.setLoginBiocare(true);
+  //     setState({ isLoginBiocare: true });
+  //   } catch (error) {
+  //     console.error('Failed to get current authenticated user: ', error);
+  //     if (window.location.hostname === 'localhost') {
+  //       Auth.federatedSignIn({ customProvider: 'Clinic' });
+  //     } else {
+  //       window.location.href = VITE_BIOCARE_PORTAL_URL;
+  //     }
+  //     return;
+  //   }
+  //   handleLogin();
+  // };
 
-  const listenLocalLogin = () => {
-    Hub.listen('auth', ({ payload: { event } }) => {
-      switch (event) {
-        case 'signIn':
-          break;
-        case 'cognitoHostedUI':
-          handleCheckLoginStatus();
-          break;
-        default:
-          break;
-      }
-    });
-  };
+  // const listenLocalLogin = () => {
+  //   Hub.listen('auth', ({ payload: { event } }) => {
+  //     switch (event) {
+  //       case 'signIn':
+  //         break;
+  //       case 'cognitoHostedUI':
+  //         handleCheckLoginStatus();
+  //         break;
+  //       default:
+  //         break;
+  //     }
+  //   });
+  // };
 
   const onClickExpiredModal = () => {
     if (shouldCallLogoutWhenExpireToken.current) {
@@ -98,28 +106,32 @@ const AuthenticationGate = ({ children }: { children: JSX.Element }) => {
     setState({ isOpenExpiredModal: true });
   });
 
-  useEmitter(
-    AppFlowActions.USER_UPDATED,
-    (message: IUserUpdated) => {
-      if (message.id !== me.id) {
-        return;
-      }
-      // deactivated user
-      if (message.isDisabled) {
-        return;
-      }
-    },
-    [me],
-  );
+  // useEmitter(
+  //   AppFlowActions.USER_UPDATED,
+  //   (message: IUserUpdated) => {
+  //     if (message.id !== me.id) {
+  //       return;
+  //     }
+  //     // deactivated user
+  //     if (message.isDisabled) {
+  //       return;
+  //     }
+  //   },
+  //   [me],
+  // );
+
+  // useEffect(() => {
+  //   if (window.location.hostname === 'localhost') {
+  //     listenLocalLogin();
+  //   }
+  // }, []);
+
+  // useEffect(() => {
+  //   handleCheckLoginStatus();
+  // }, []);
 
   useEffect(() => {
-    if (window.location.hostname === 'localhost') {
-      listenLocalLogin();
-    }
-  }, []);
-
-  useEffect(() => {
-    handleCheckLoginStatus();
+    handleLogin();
   }, []);
 
   return isLogin ? (
