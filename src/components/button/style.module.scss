@@ -1,0 +1,18 @@
+@import '../../styles/variable.scss';
+
+.customButton {
+  box-shadow: none;
+
+  &.primaryOutlineType {
+    border: 1px solid $primaryBase;
+    color: $primaryBase;
+  }
+
+  &.linkType {
+    padding: 0;
+  }
+
+  &.loading {
+    color: $text-desc-color;
+  }
+}

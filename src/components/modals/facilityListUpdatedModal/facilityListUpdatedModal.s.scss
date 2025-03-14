@@ -1,0 +1,15 @@
+@import '../../../styles/variable.scss';
+@import '../../../styles/mixin.scss';
+
+.facility-list-updated-modal {
+  .facility-list-updated-modal__content {
+    text-align: center;
+    display: block;
+
+    & > a {
+      display: inline-block;
+      text-decoration: underline;
+      color: $primaryBase;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@import '../../styles/variable.scss';
+
+.reverse-button {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+
+  .ant-btn-icon {
+    margin-inline-start: $size-8;
+    margin-inline-end: 0 !important;
+  }
+}

@@ -1,0 +1,89 @@
+@startuml
+  title Workflow 
+  participant Device
+  participant Web
+  actor User
+  participant Server
+
+  User->Web: Add new device
+  User->Web: Press Connect button
+  Web->Device: Open USB connection
+  note right Device: Connect Device (has detail)
+  rnote over Device: Turn off Bluetooth
+  rnote over Device: Show Public partition
+  Device-->Web: Open USB successfully
+  loop 30s 
+    Web-->Server: Device connecting by USB
+  end
+  Web-->User: Change mode to upload data
+  User->Web: Choose folder to upload
+  alt #Implementation Not correct device folder
+    Web-->User: Show error message (Choose folder OB2100000001)
+  else #FFF Correct device folder
+    Web->Server: Upload data to server (has detail)
+  end
+@enduml
+
+
+@startuml
+  title Connect Device  
+  participant Device
+  participant Web
+  actor User
+
+  Web->Device: Open USB connection
+  alt #Implementation Device is not connected
+    Device-->Web: Open USB failed
+    Web->User: Show error message
+  else #FFF Device is connected
+    Web->Device: Get device id (SM+ID?)
+    Device-->Web: Send device id (OK+ID=2100000001)
+    Web->Device: Get study status (SM+STUDYSTAT?)
+    note right Device: Response: OK+STUDYSTAT=<StudyId>,<StudyStatus>,<ExportStatus>\nParameters:\n<StudyId>: Study ID\n<StudyStatus>: Study status\n<ExportStatus>:\n\t0: In progress\n\t1: Completed
+    alt #Implementation Study status is not sent
+      Device-->Web !!: Not send study status
+      loop 5s, limit 3 time
+        Web->Device: Get study status (SM+STUDYSTAT?)
+        note right Device: If send study status -> continue
+      end
+      Web->User: Show error message
+    else #FFF Study status is sent
+      alt #Implementation Study status is not completed
+        Device-->Web: Send study status (OK+STUDYSTAT=1234,"In Progress",1)
+        Web->User: Show message waiting device to complete
+      else #FFF Study status is completed
+        Device-->Web: Send study status (OK+STUDYSTAT=1234,"Completed",1)
+        Web->Device: Request to show Public partition (SM+MASS2?)
+        Device-->Web: Public partition (OK+MASS2)
+        Web->User: Change mode to upload data
+      end
+    end
+  end
+@enduml
+
+@startuml
+  title Upload Data to server 
+  participant Device
+  participant Web
+  ' actor User
+  participant Server
+
+  Web->Server: Upload lookup table, Notification files
+  note right Web: Lookup table files: \n- Api: syncDeviceData\n- File type: .json\n- Format: {\n\t "ecg" : [{\n\t\t start: 1741580717, \n\t\t stop: 1741580717, \n\t\t index: 0 \n\t\t},\n\t "log" : [{\n\t\t start: 1741580717, \n\t\t stop: 1741580717, \n\t\t index: 0 \n\t\t},\n\t "acc" : [{\n\t\t start: 1741580717, \n\t\t stop: 1741580717, \n\t\t index: 0 \n\t\t},\n\t ...],
+  group Upload Notification files successfully
+    Server-->Web: Upload Notification files successfully
+    Web->Device: Request to delete Notification (SM+CLEANDATA=?)
+    note right Web: Request: SM+CLEANDATA=<SecureKey>,<Type> (Notification: 2)
+    Device-->Web: Delete Notification successfully (OK+CLEANDATA=2)
+  end
+  group Receive missing data
+    Server-->Web: Missing data
+    note right Server: Missing data: \n- Format: [{\n\t start: 1741580717, \n\t stop: 1741580717, \n\t index: 0 \n\t}, ...]
+    Web->Server: Slice data to queue by 1 hour
+    note right Web: Queue: \n- Format: [[{\n\t start: 1741580717, \n\t stop: 1741580717, \n\t buffer: ... \n\t}, ...], ...]
+    loop while queue is not empty
+      Web->Server: Upload data queue[0]
+      Server-->Web: Upload ecg data successfully
+    end
+  end
+@enduml

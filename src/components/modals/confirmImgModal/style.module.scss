@@ -1,0 +1,26 @@
+@import '../../../styles/variable.scss';
+
+.confirmImgModal {
+  .confirmImgModalBody {
+    padding: $size-20 $size-24;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: $size-14;
+    line-height: $size-22;
+    color: $text-color-secondary;
+
+    .confirmImgModalTitle {
+      margin-top: $size-12;
+      margin-bottom: $size-8;
+      color: $text-color;
+      font-size: $size-16;
+      line-height: $size-24;
+      font-weight: 600;
+    }
+
+    .confirmImgModalBtn {
+      margin-top: $size-20;
+    }
+  }
+}

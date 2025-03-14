@@ -1,0 +1,11 @@
+@import '../../styles/variable.scss';
+
+.select-with-search-box {
+  &-search {
+    margin-bottom: $size-4;
+
+    .ant-input-search-button {
+      cursor: default;
+    }
+  }
+}

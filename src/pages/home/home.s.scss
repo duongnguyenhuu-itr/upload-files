@@ -1,0 +1,80 @@
+.home {
+  height: 100%;
+  padding: 60px 24px 24px;
+
+  &-logo {
+    margin: 48px auto 16px auto;
+    width: 250px;
+  }
+
+  &-connect-device {
+    color: #8492a6;
+    font-size: 20px;
+    text-align: center;
+
+    img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  &-container {
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    align-self: center;
+    justify-content: center;
+  }
+
+  &-devices-container {
+    width: 200px;
+  }
+
+  &-divider {
+    height: 100%;
+  }
+
+  &-device-info-container {
+    ul {
+      color: black;
+      list-style: initial;
+      margin-left: 16px;
+
+      li {
+        margin-top: 4px;
+      }
+    }
+  }
+
+  &-ports {
+    background-color: white;
+    color: black;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 8px 0;
+
+    .port-item {
+      cursor: pointer;
+      padding: 8px;
+
+      &:hover {
+        background-color: #eeeeee;
+      }
+
+      &-selected {
+        background-color: burlywood;
+      }
+    }
+  }
+
+  &-connecting-device {
+    color: black;
+    font-size: 20px;
+  }
+
+  .device-manager {
+    height: fit-content;
+  }
+}

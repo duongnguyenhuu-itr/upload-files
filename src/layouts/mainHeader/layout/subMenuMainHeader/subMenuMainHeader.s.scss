@@ -1,0 +1,57 @@
+@import '../../../../styles/variable.scss';
+
+.sub-menu {
+  width: $size-220;
+  background: $white;
+  border-radius: $size-6;
+  box-shadow: 0px 9px 28px 8px #0000000d, 0px 6px 16px 0px #00000014,
+    0px 3px 6px -4px #0000001f;
+
+  margin-top: $size-8;
+  padding: $size-4;
+
+  .ant-divider {
+    margin: $size-4 0;
+  }
+
+  &-user {
+    display: flex;
+    padding: $size-5 $size-8;
+    gap: $size-10;
+    font-size: $size-12;
+    line-height: $size-20;
+    color: $text-desc-color;
+
+    &-name {
+      font-size: $size-14;
+      line-height: $size-22;
+      color: $text-color;
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    &-item {
+      width: 100%;
+      text-align: start;
+      justify-content: start;
+      color: $text-color !important;
+      padding: 0 $size-8 !important;
+
+      &:hover {
+        color: $text-color !important;
+      }
+    }
+  }
+
+  .logout-btn {
+    color: $color-error !important;
+
+    &:hover {
+      color: $color-error !important;
+    }
+  }
+}

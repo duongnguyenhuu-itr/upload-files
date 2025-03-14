@@ -1,0 +1,49 @@
+@import '../../../../../../styles/variable.scss';
+
+.folder-upload {
+  .custom-upload-button {
+    font-size: 14px;
+    height: 32px;
+    padding: 0px 15px;
+    border-radius: 6px;
+    background: #ffffff;
+    outline: none;
+    position: relative;
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: center;
+    background-image: none;
+    border: 1px solid #d9d9d9;
+    cursor: pointer;
+    transition: all 0.2scubic-bezier(0.645, 0.045, 0.355, 1);
+    user-select: none;
+    touch-action: manipulation;
+
+    &:hover {
+      color: #2b80ff;
+      border-color: #2b80ff;
+    }
+
+    &:active {
+      color: #0047d6;
+      border-color: #0047d6;
+    }
+
+    &.custom-upload-button-loading {
+      opacity: 0.65;
+      pointer-events: none;
+
+      .ant-spin {
+        color: inherit;
+      }
+    }
+  }
+
+  .folder-upload-input {
+    display: none;
+  }
+}

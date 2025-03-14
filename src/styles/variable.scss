@@ -1,0 +1,314 @@
+$background-base: #f1f5f8;
+$background-dark: #eaedf1;
+$background-light: #f5f7fa;
+
+$primary-base: #2265c6;
+$primary-light: #3a7de0;
+$primary-lighter: #8db3eb;
+$primary-lightest: #d9e7fa;
+$primary-3: #a1b9db;
+
+$blue-1: #ebf0f7;
+$blue-2: #c0d0e7;
+$blue-3: #a1b9db;
+$blue-4: #7699cb;
+$blue-5: #5c85c1;
+$blue-6: #3367b1;
+$blue-7: #2e5ea1;
+$blue-8: #24497e;
+
+$neutral-3: #f5f5f5;
+
+$primary-BDM-1: #ebf0f7;
+
+$character-success: #52c41a;
+$character-danger: #ff4d4f;
+
+$day-break-blue-1: #e6f7ff;
+$day-break-blue-3: #91d5ff;
+$day-break-blue-7: #096dd9;
+
+$volcano-1: #fff2e8;
+$volcano-6: #fa541c;
+
+$polar-green-1: #f6ffed;
+$polar-green-3: #b7eb8f;
+$polar-green-5: #73d13d;
+$polar-green-6: #52c41a;
+
+$sunset-orange-1: #fff7e6;
+$sunset-orange-3: #ffd591;
+
+$gray-1: #ffffff;
+$gray-2: #fafafa;
+$gray-3: #f5f5f5;
+$gray-4: #e8e8e8;
+$gray-5: #d9d9d9;
+$gray-6: #bfbfbf;
+$gray-7: #8c8c8c;
+$gray-8: #595959;
+$gray-9: #262626;
+$gray-10: #000000;
+
+$red-1: #fff1f0;
+$red-2: #ffccc7;
+$red-3: #ffa39e;
+$red-4: #ff7875;
+$red-5: #ff4d4f;
+$red-6: #f5222d;
+$red-7: #cf1322;
+
+$gold-2: #fff1b8;
+$gold-3: #ffe58f;
+$gold-5: #ffc53d;
+$gold-6: #faad14;
+
+$white: #ffffff;
+$red: red;
+$height-header: 64px;
+
+$grey-darker: #161d29;
+$grey-dark: #2f3845;
+$grey-base: #444f66;
+$grey-lighter: #bccce0;
+$grey-light: #8492a6;
+$grey-lightest: #dfe9f5;
+$semantic-blue-lightest: #ebf8ff;
+$blue-lighter: #96d0fa;
+$blue-500: #0954ba;
+$semantic-blue-dark: #005fb2;
+
+$black: #000000;
+$text-color: #000000e0;
+$netural-5: #d9d9d9;
+
+
+// CORE
+/* variable color */
+$primaryLightest: #d9e7fa;
+$primaryLight: #3a7de0;
+$primaryLighter: #8db3eb;
+$primaryBase: #025efc;
+$primaryBaseBg: #e6f3ff;
+$primaryDark: #1c57ad;
+$primary-1: #e6f7ff;
+$primary-9: #003a8c;
+$primary-6: #1890ff;
+$primary-5: #40a9ff;
+
+$whitegreyLight: #f5f7fa;
+$whitegreyLighter: #fbfbfb;
+$whitegreyBase: #f1f5f8;
+$whitegreyDark: #eaedf1;
+
+$backgroundLight: #f5f7fa;
+$backgroundBase: #f1f5f8;
+$backgroundDark: #eaedf1;
+$backgroundLighter: #fbfbfb;
+
+$secondaryLighter: #def5ef;
+$secondaryDark: #1cba92;
+
+$greyLighter: #bccce0;
+$greyLight: #8492a6;
+$greyBase: #444f66;
+$greyDark: #2f3845;
+$greyDarker: #161d29;
+$greyLightest: #dfe9f5;
+
+$greyscaleBase: #444f66;
+$greyscaleLight: #8492a6;
+$greyscaleLighter: #bccce0;
+$greyscaleLightest: #dfe9f5;
+$greyscaleDark: #2f3845;
+
+$semanticBlueLightest: #ebf8ff;
+$semanticBlueDark: #005fb2;
+
+$semanticGreenLightest: #edfaf0;
+
+$semanticRedLightest: #ffb2b5;
+$semanticRedLight: #f56c70;
+
+$coalLightest: #f4f4f6;
+$coalDarker: #49494f;
+
+$redDark: #e12424;
+$redBase: #db1f25;
+$redLightest: #ffebeb;
+$redLighter: #fff2f2;
+
+$greenLight: #b4f8ac;
+$greenLighter: #e7fce5;
+
+$orangeDark: #f29303;
+$orangeLight: #fad398;
+$orangeLighter: #fdedd4;
+
+$redLight: #ffc0c0;
+
+$backgroundLight: #f5f7fa;
+$backgroundDark: #eaedf1;
+
+$fogBackground: #f7f9f9;
+$black: #000;
+$white: #fff;
+
+$geek-blue-1: #f0f5ff;
+$geek-blue-2: #d6e4ff;
+$geek-blue-6: #2f54eb;
+
+$neutral-1: #f0f0f0;
+$neutral-2: #fafafa;
+$neutral-4: #f0f0f0;
+$neutral-5: #d9d9d9;
+$neutral-7: #8c8c8c;
+$neutral-9: #434343;
+$neutral-10: #262626;
+
+$primary-BDM-1: #ebf0f7;
+$primary-BDM-2: #c0d0e7;
+$primary-BDM-6: #3367b1;
+$primary-BDM-8: #24497e;
+
+$dust-red-1: #fff1f0;
+$dust-red-3: #ffa39e;
+$dust-red-5: #ff4d4f;
+$dust-red-6: #f5222d;
+
+$calendula-gold-6: #faad14;
+$cyan-5: #36cfc9;
+$sunset-orange-6: #fa8c16;
+$polar-green-5: #73d13d;
+$polar-green-1: #f6ffed;
+
+$character-success: #52c41a;
+
+$octomed-5: #2b80ff;
+
+$purple-6: #722ed1;
+$cyan-6: #13c2c2;
+$orange-6: #fa8c16;
+$green-6: #52c41a;
+$blue-6: #1677ff;
+
+$text-color: #000000e0;
+$text-color-disabled: #00000040;
+$text-desc-color: #00000073;
+$text-color-secondary: #000000a6;
+$color-split: #0000000f;
+$color-fill-tertiary: #0000000f;
+$color-error: #ff4d4f;
+$color-success: #52c41a;
+$color-success-border: #b7eb8f;
+$color-success-bg: #f6ffed;
+$color-error-border: #ffccc7;
+$color-error-bg: #fff2f0;
+$color-border: #d9d9d9;
+$color-border: #d9d9d9;
+$color-bg-layout: #f0f2f5;
+$color-fill-quaternary: #00000005;
+$color-warning: #faad14;
+$color-warning-active: #D48806;
+$color-warning-border: #ffe58f;
+$color-warning-bg: #fffbe6;
+$color-info: #1677ff;
+
+
+
+/* variable size */
+$size-1: 0.0625rem;
+$size-2: 0.125rem;
+$size-3: 0.1875rem;
+$size-4: 0.25rem;
+$size-5: 0.3125rem;
+$size-6: 0.375rem;
+$size-7: 0.4375rem;
+$size-8: 0.5rem;
+$size-9: 0.5625rem;
+$size-10: 0.625rem;
+$size-11: 0.6875rem;
+$size-12: 0.75rem;
+$size-13: 0.8125rem;
+$size-14: 0.875rem;
+$size-15: 0.9375rem;
+$size-16: 1rem;
+$size-17: 1.0625rem;
+$size-18: 1.125rem;
+$size-19: 1.1875rem;
+$size-20: 1.25rem;
+$size-21: 1.3125rem;
+$size-22: 1.375rem;
+$size-24: 1.5rem;
+$size-26: 1.625rem;
+$size-27: 1.6875rem;
+$size-28: 1.75rem;
+$size-30: 1.875rem;
+$size-32: 2rem;
+$size-34: 2.125rem;
+$size-36: 2.25rem;
+$size-38: 2.375rem;
+$size-40: 2.5rem;
+$size-42: 2.625rem;
+$size-44: 2.75rem;
+$size-46: 2.875rem;
+$size-48: 3rem;
+$size-50: 3.125rem;
+$size-51: 3.1875rem;
+$size-52: 3.25rem;
+$size-54: 3.375rem;
+$size-56: 3.5rem;
+$size-62: 3.875rem;
+$size-64: 4rem;
+$size-66: 4.125rem;
+$size-68: 4.25rem;
+$size-72: 4.5rem;
+$size-73: 4.5625rem;
+$size-76: 4.75rem;
+$size-80: 5rem;
+$size-88: 5.5rem;
+$size-90: 5.625rem;
+$size-96: 6rem;
+$size-100: 6.25rem;
+$size-108: 6.75rem;
+$size-110: 6.875rem;
+$size-120: 7.5rem;
+$size-128: 8rem;
+$size-140: 8.75rem;
+$size-150: 9.375rem;
+$size-154: 9.625rem;
+$size-160: 10rem;
+$size-176: 11rem;
+$size-180: 11.25rem;
+$size-200: 12.5rem;
+$size-202: 12.625rem;
+$size-216: 13.5rem;
+$size-218: 13.625rem;
+$size-220: 13.75rem;
+$size-244: 15.25rem;
+$size-246: 15.375rem;
+$size-250: 15.625rem;
+$size-256: 16rem;
+$size-262: 16.375rem;
+$size-265: 16.5625rem;
+$size-270: 16.875rem;
+$size-276: 17.25rem;
+$size-288: 18rem;
+$size-308: 19.25rem;
+$size-320: 20rem;
+$size-327: 20.4375rem;
+$size-330: 20.625rem;
+$size-336: 21rem;
+$size-343: 21.4375rem;
+$size-348: 21.75rem;
+$size-375: 23.4375rem;
+$size-400: 25rem;
+$size-480: 30rem;
+$size-500: 31.25rem;
+$size-512: 32rem;
+$size-560: 35rem;
+$size-700: 43.75rem;
+$size-736: 46rem;
+$size-750: 46.875rem;
+$size-1020: 63.75rem;
+$size-1044: 65.25rem;

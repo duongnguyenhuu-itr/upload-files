@@ -1,0 +1,29 @@
+@import '../../styles/variable.scss';
+
+.inputTitleWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  font-style: normal;
+  font-size: $size-14;
+  line-height: $size-22;
+  color: $text-color;
+  margin-bottom: $size-8;
+
+  .requiredIcon {
+    color: $redBase;
+    margin-right: $size-2;
+    font-weight: 700;
+  }
+
+  p {
+    margin-bottom: unset;
+  }
+
+  .subTitle {
+    color: $text-desc-color;
+    font-weight: 400;
+    margin-left: 4px;
+  }
+}

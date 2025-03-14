@@ -1,0 +1,165 @@
+@import '../../styles/variable.scss';
+
+.customAvatarWrapper {
+  // border: 1px solid $greyscaleLightest;
+  border-radius: 50%;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .customAvatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+
+    span {
+      line-height: 100%;
+    }
+
+    &.border {
+      border: $size-1 solid $white;
+    }
+
+    &.size-16 {
+      width: $size-16;
+      height: $size-16;
+      font-size: $size-8;
+    }
+
+    &.size-24 {
+      width: $size-24;
+      height: $size-24;
+      font-size: $size-12;
+    }
+
+    &.size-32 {
+      width: $size-32;
+      height: $size-32;
+      font-size: $size-16;
+    }
+
+    &.size-40 {
+      width: $size-40;
+      height: $size-40;
+      font-size: $size-20;
+    }
+
+    &.size-48 {
+      width: $size-48;
+      height: $size-48;
+      font-size: $size-24;
+    }
+
+    &.size-56 {
+      width: $size-56;
+      height: $size-56;
+      font-size: $size-28;
+    }
+
+    &.size-64 {
+      width: $size-64;
+      height: $size-64;
+      font-size: $size-32;
+    }
+
+    &.size-72 {
+      width: $size-72;
+      height: $size-72;
+      font-size: $size-36;
+    }
+
+    &.size-80 {
+      width: $size-80;
+      height: $size-80;
+      font-size: $size-40;
+    }
+
+    &.size-88 {
+      width: $size-88;
+      height: $size-88;
+      font-size: $size-44;
+    }
+
+    &.size-96 {
+      width: $size-96;
+      height: $size-96;
+      font-size: $size-48;
+    }
+
+    &.size-100 {
+      width: $size-100;
+      height: $size-100;
+      font-size: $size-50;
+    }
+
+    &.bgAvatar {
+      &-1 {
+        background-color: #ffecec;
+        color: #f26c62;
+      }
+
+      &-2 {
+        background-color: #ffefe2;
+        color: #ed762d;
+      }
+
+      &-3 {
+        background-color: #fef9e5;
+        color: #e59d29;
+      }
+
+      &-4 {
+        background-color: #e8fffa;
+        color: #1cc2ab;
+      }
+
+      &-5 {
+        background-color: #e9faf1;
+        color: #05ba77;
+      }
+
+      &-6 {
+        background-color: #e4edeb;
+        color: #709d92;
+      }
+
+      &-7 {
+        background-color: #f8eef9;
+        color: #ce6de4;
+      }
+
+      &-8 {
+        background-color: #e7e2fc;
+        color: #8163ee;
+      }
+
+      &-9 {
+        background-color: #d9e5ff;
+        color: #3372ff;
+      }
+
+      &-10 {
+        background-color: #f6dbeb;
+        color: #d13f95;
+      }
+
+      &-11 {
+        background-color: #ebddeb;
+        color: #954b95;
+      }
+
+      &-12 {
+        background-color: #dbe3e6;
+        color: #416a7a;
+      }
+
+      &-13 {
+        background-color: #e4b9c9;
+        color: #e57f9e;
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+# --- COMMIT TASK ---
+# Format: #<issue_number> <comment>
+# Ex: #19 Handle resize chart
+
+# --- COMMIT BUG ---
+# Format: <link_bug> <comment>
+# Ex: https://github.com/ITR-vietnam/btcy-biocare-qc-bug_report/issues/774 fix stupid bug

@@ -1,0 +1,51 @@
+@import '../../../styles/variable.scss';
+
+.contact-support-modal {
+  .ant-modal-content {
+    padding: 0;
+  }
+
+  .ant-modal-footer {
+    margin-top: 0;
+  }
+
+  &__content {
+    padding: $size-24;
+    font-size: $size-14;
+    color: $text-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 112px;
+    }
+  }
+  &-title {
+    margin-top: $size-12;
+    font-size: $size-16;
+    line-height: $size-24;
+    font-weight: 600;
+  }
+  &-desc-wrapper {
+    margin-top: $size-8;
+    display: flex;
+    flex-direction: column;
+    color: $text-color-secondary;
+    font-size: $size-14;
+    line-height: $size-22;
+    text-align: center;
+  }
+  &-info {
+    a {
+      display: inline-block;
+      color: $primary-base;
+      text-decoration: underline;
+    }
+  }
+  &__footer {
+    display: flex;
+    justify-content: center;
+    gap: $size-12;
+    padding: $size-16 $size-24;
+  }
+}

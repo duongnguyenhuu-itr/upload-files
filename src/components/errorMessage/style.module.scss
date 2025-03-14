@@ -1,0 +1,53 @@
+@import '../../styles/variable.scss';
+
+.errorMessageWrapper {
+  display: flex;
+  justify-content: flex-start;
+  color: $color-error;
+  font-weight: 400;
+  font-size: $size-14;
+  line-height: $size-22;
+
+  .errorMessageIconWrapper {
+    height: $size-24;
+    display: flex;
+    align-items: center;
+
+    .errorMessageIcon {
+      margin-right: $size-3;
+    }
+  }
+
+  &.hasBackgroundError {
+    background-color: $redLightest;
+    border: $size-1 solid $redLighter;
+    color: $greyDark;
+    padding: $size-8;
+    font-size: $size-16;
+    line-height: $size-24;
+    border-radius: $size-8;
+
+    .errorMessageIcon {
+      width: $size-20;
+      height: $size-20;
+      margin-right: $size-8;
+    }
+  }
+
+  .errorMessageText {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: unset;
+  }
+
+  .errorMessageButton {
+    padding: $size-4;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}

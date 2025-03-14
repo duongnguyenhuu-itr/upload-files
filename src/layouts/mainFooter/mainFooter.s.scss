@@ -1,0 +1,32 @@
+@import '../../styles/variable.scss';
+
+.main-footer {
+  min-height: $size-56;
+  height: $size-56;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $text-color;
+  font-size: $size-14;
+  line-height: $size-22;
+  padding: 0 $size-24;
+  border-top: 1px solid $neutral-1;
+  background-color: white;
+  box-sizing: border-box;
+  transition: all 0.4s ease-in-out;
+
+  &-more-info {
+    display: flex;
+    align-items: center;
+    gap: $size-24;
+
+    &-btn {
+      padding: 0;
+      color: $text-color;
+
+      &:hover {
+        color: $text-color !important;
+      }
+    }
+  }
+}

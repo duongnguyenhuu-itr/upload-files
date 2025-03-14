@@ -1,0 +1,67 @@
+@mixin widget-style {
+  background: $white;
+  border-radius: 12px;
+  box-shadow: 0px 8px 16px -8px rgba(17, 12, 34, 0.08);
+  border: 1px solid $grey-lightest;
+}
+
+@mixin widget-header {
+  font-weight: 500;
+  line-height: 34px;
+  text-align: left;
+  color: $grey-darker;
+  padding-bottom: 24px;
+  border-bottom: 1px solid $grey-lightest;
+}
+
+@mixin scroll-styles {
+  /* Customize website's scrollbar like Mac OS
+    Not supports in Firefox and IE */
+  /* total width */
+  /* total width */
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 12px;
+    height: 12px;
+  }
+
+  /* background of the scrollbar except button or resizer */
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  /* scrollbar itself */
+  &::-webkit-scrollbar-thumb {
+    background-color: $background-dark;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  /* set button(top and bottom of the scrollbar) */
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+}
+
+@mixin scroll-x-styles {
+  //for firefox and other brower don't support
+  overflow-x: auto;
+  overflow-x: overlay;
+  @include scroll-styles();
+}
+
+@mixin scroll-y-styles {
+  //for firefox and other brower don't support
+  overflow-y: auto;
+  overflow-y: overlay;
+  @include scroll-styles();
+}
+
+@mixin font-face($font-style, $font-weight, $font-size, $line-height, $color) {
+  font-style: $font-style;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+}

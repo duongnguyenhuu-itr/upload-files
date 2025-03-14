@@ -1,0 +1,106 @@
+@import '../../styles/variable.scss';
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 $size-24;
+  height: $size-64;
+  border-bottom: 1px solid $neutral-1;
+  box-sizing: border-box;
+
+  &-lef-side {
+    display: flex;
+    align-items: center;
+    gap: $size-32;
+  }
+
+  &-logo {
+    width: $size-120;
+    height: $size-24;
+  }
+
+  &-tabs {
+    .ant-tabs-nav {
+      margin-bottom: 0;
+
+      &::before {
+        border-bottom: none;
+      }
+    }
+
+    .ant-tabs-tab {
+      padding: $size-21 0;
+    }
+
+    .ant-tabs-nav-operations {
+      display: none !important;
+    }
+  }
+
+  &-facility-select {
+    min-width: $size-108;
+    max-width: $size-256;
+
+    .ant-typography {
+      display: inline-block !important;
+      line-height: $size-30;
+      width: 100%;
+      max-width: $size-216;
+    }
+
+    .ant-select-dropdown {
+      width: $size-200;
+    }
+  }
+
+  &-right {
+    display: flex;
+    align-items: center;
+    gap: $size-20;
+  }
+
+  &-notification {
+    position: relative;
+    width: $size-40;
+    height: $size-40;
+    font-size: $size-18;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &-count {
+      font-size: $size-12;
+      height: $size-14;
+      padding: 0 $size-4;
+      border-radius: $size-12;
+      background: $color-error;
+      border: $size-1 solid $white;
+      color: $white;
+      position: absolute;
+      left: $size-20;
+      top: $size-4;
+    }
+  }
+
+  &-user {
+    width: $size-40;
+    height: $size-40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-avatar {
+    cursor: pointer;
+
+    &:hover {
+      border: $size-4 solid #0000000f;
+    }
+  }
+}
