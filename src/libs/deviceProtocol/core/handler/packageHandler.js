@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 /* eslint-disable camelcase */
 /* eslint-disable no-case-declarations */
 
@@ -12,7 +11,7 @@ import { SmNotificationHandler } from './sm/smNotificationHandler';
 import { SmNWADAPTERHandler } from './sm/smNWADAPTERHandler';
 import { SmREBOOTHandler } from './sm/smREBOOTHandler';
 import { SmStudyHandler } from './sm/smStudyHandler';
-import { SmUECGhandler } from './sm/smUECGHandler';
+import { SmUECGHandler } from './sm/smUECGHandler';
 import { HandShakeHandler } from './usbSyn/handShakeHandler';
 
 export const PackageHandler = {
@@ -59,7 +58,7 @@ export const PackageHandler = {
         } else if (packageStringDataSM_COMMAND.includes('MODEMREBOOT')) {
           SmREBOOTHandler.handle(usbComDevice, packageStringDataSM_COMMAND);
         } else if (packageStringDataSM_COMMAND.includes('UECG')) {
-          SmUECGhandler.handle(usbComDevice, packageStringDataSM_COMMAND);
+          SmUECGHandler.handle(usbComDevice, packageStringDataSM_COMMAND);
         } else if (packageStringDataSM_COMMAND.includes('STUDY')) {
           SmStudyHandler.handle(usbComDevice, packageStringDataSM_COMMAND);
         } else if (packageStringDataSM_COMMAND.includes('MASS')) {

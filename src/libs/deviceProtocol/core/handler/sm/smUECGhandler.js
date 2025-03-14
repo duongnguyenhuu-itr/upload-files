@@ -1,4 +1,4 @@
-export const SmUECGhandler = {
+export const SmUECGHandler = {
   handle(usbComDevice, packageStringData) {
     const failResult = {
       success: false,
