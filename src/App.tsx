@@ -9,7 +9,7 @@ Amplify.configure(updatedAwsConfig());
 const App = () => {
   return (
     <div className='App'>
-      <LoadingPage />
+      {/* <LoadingPage /> */}
       <BrowserRouter>
         <Routes>
           <Route path='/*' element={<ProtectedRoutes />} />

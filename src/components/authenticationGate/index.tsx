@@ -122,14 +122,14 @@ const AuthenticationGate = ({ children }: { children: JSX.Element }) => {
   //   handleCheckLoginStatus();
   // }, []);
 
-  return isLogin ? (
+  return (
     <>
       <ExpiredModal open={state.isOpenExpiredModal} onCancel={onClickExpiredModal} />
       <MainLayout>{children}</MainLayout>
       {/* {me.id && <SocketIOComponent />} */}
       <SocketIOComponent />
     </>
-  ) : null;
+  );
 };
 
 export default AuthenticationGate;
