@@ -52,22 +52,22 @@ const AuthenticationGate = ({ children }: { children: JSX.Element }) => {
     }
   };
 
-  const handleCheckLoginStatus = async () => {
-    try {
-      await Auth.currentAuthenticatedUser();
-      appLocalStorage.setLoginBiocare(true);
-      setState({ isLoginBiocare: true });
-    } catch (error) {
-      console.error('Failed to get current authenticated user: ', error);
-      if (window.location.hostname === 'localhost') {
-        Auth.federatedSignIn({ customProvider: 'Clinic' });
-      } else {
-        window.location.href = VITE_BIOCARE_PORTAL_URL;
-      }
-      return;
-    }
-    handleLogin();
-  };
+  // const handleCheckLoginStatus = async () => {
+  //   try {
+  //     await Auth.currentAuthenticatedUser();
+  //     appLocalStorage.setLoginBiocare(true);
+  //     setState({ isLoginBiocare: true });
+  //   } catch (error) {
+  //     console.error('Failed to get current authenticated user: ', error);
+  //     if (window.location.hostname === 'localhost') {
+  //       Auth.federatedSignIn({ customProvider: 'Clinic' });
+  //     } else {
+  //       window.location.href = VITE_BIOCARE_PORTAL_URL;
+  //     }
+  //     return;
+  //   }
+  //   handleLogin();
+  // };
 
   const listenLocalLogin = () => {
     Hub.listen('auth', ({ payload: { event } }) => {
@@ -75,7 +75,7 @@ const AuthenticationGate = ({ children }: { children: JSX.Element }) => {
         case 'signIn':
           break;
         case 'cognitoHostedUI':
-          handleCheckLoginStatus();
+          // handleCheckLoginStatus();
           break;
         default:
           break;
@@ -118,15 +118,16 @@ const AuthenticationGate = ({ children }: { children: JSX.Element }) => {
     }
   }, []);
 
-  useEffect(() => {
-    handleCheckLoginStatus();
-  }, []);
+  // useEffect(() => {
+  //   handleCheckLoginStatus();
+  // }, []);
 
   return isLogin ? (
     <>
       <ExpiredModal open={state.isOpenExpiredModal} onCancel={onClickExpiredModal} />
       <MainLayout>{children}</MainLayout>
-      {me.id && <SocketIOComponent />}
+      {/* {me.id && <SocketIOComponent />} */}
+      <SocketIOComponent />
     </>
   ) : null;
 };
