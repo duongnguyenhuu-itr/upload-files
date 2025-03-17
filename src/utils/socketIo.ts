@@ -3,6 +3,7 @@ import { handleSignOut } from '@/layouts/mainLayout/mainLayout.h';
 import { Auth } from 'aws-amplify';
 import { Socket, io } from 'socket.io-client';
 import emitter from './emitter';
+import appLocalStorage from './localStorage';
 
 class SocketClient {
   private isconnected: boolean;
@@ -14,7 +15,9 @@ class SocketClient {
   }
 
   getAuth = async () => {
-    const accessToken = (await Auth.currentSession()).getAccessToken().getJwtToken();
+    const accessToken =
+      (await Auth.currentSession()).getAccessToken().getJwtToken() ||
+      appLocalStorage.getAccessToken();
     return {
       accessToken,
     };

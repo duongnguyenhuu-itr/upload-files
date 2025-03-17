@@ -3,6 +3,7 @@ import ReconnectingWebSocket from 'reconnecting-websocket';
 import LINK_CONFIG from '../../aws/env';
 import { consoleTimeLog } from '../../utils';
 import { ByteUtils } from '../deviceProtocol/util/byteUtils';
+import appLocalStorage from '../../utils/localStorage';
 
 const WebSocketActionEnum = {
   JOIN_ROOM: 'joinRoom',
@@ -55,7 +56,7 @@ export class WebSocketClient {
     this.deviceId = deviceId;
     try {
       const currentSession = await Auth.currentSession();
-      const token = currentSession.getAccessToken().getJwtToken();
+      const token = currentSession.getAccessToken().getJwtToken() || appLocalStorage.getAccessToken();
       this.socket = new ReconnectingWebSocket(
         `${LINK_CONFIG.SOCKET_STREAMING_URL}?Auth=${token}`,
       );

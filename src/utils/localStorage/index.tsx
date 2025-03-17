@@ -5,6 +5,7 @@ interface IAppLocalStorage {
   isLoginBiocare: () => boolean;
   setDeviceId: (deviceId: string, vendorId_productId: string) => void;
   getDeviceId: (vendorId_productId: string) => string;
+  getAccessToken: () => string;
 }
 
 const appLocalStorage: IAppLocalStorage = {
@@ -22,6 +23,10 @@ const appLocalStorage: IAppLocalStorage = {
 
   getDeviceId(vendorId_productId: string) {
     return localStorage.getItem(vendorId_productId) || '';
+  },
+
+  getAccessToken() {
+    return localStorage.getItem('accessToken') || '';
   },
 };
 

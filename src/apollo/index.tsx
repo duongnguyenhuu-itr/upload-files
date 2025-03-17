@@ -1,5 +1,6 @@
 import { AppFlowActions, ERROR_ACCESS_TOKEN } from '@/constants';
 import emitter from '@/utils/emitter';
+import appLocalStorage from '@/utils/localStorage';
 import {
   ApolloClient,
   ApolloLink,
@@ -50,7 +51,9 @@ const authLink = setContext(async (operation, value) => {
   if (isAuthorized) {
     try {
       accessToken =
-        customAccessToken || (await Auth.currentSession()).getAccessToken().getJwtToken();
+        customAccessToken ||
+        (await Auth.currentSession()).getAccessToken().getJwtToken() ||
+        appLocalStorage.getAccessToken();
     } catch (error) {
       console.log('🚀 ~ file: index.tsx:38 ~ authLink ~ error:', error);
       //Custom error message
